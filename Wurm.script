@@ -1,0 +1,22 @@
+sleep(8000); 
+var host = getHostname();
+var con = scan();
+for (i = con.length - 1; i >= 0; i--) {
+	if(con[i] == "darkweb"){}
+	else{
+		if(hasRootAccess == false){
+			tprint("WARNING---Start hacking " + con[i]);
+			brutessh(con[i]);
+			ftpcrack(con[i]);
+			relaysmtp(con[i]);
+			httpworm(con[i]);
+			nuke(con[i]);
+			scp("mining.script", con[i]);
+			exec("mining.script", con[i]);
+			tprint("INFO---Hacking sucessful " + con[i]);
+		}
+		else{
+			tprint("ERROR---Bereits gehackt " + con[i]);
+		}
+	}
+}
