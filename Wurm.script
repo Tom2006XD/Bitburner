@@ -2,18 +2,20 @@ sleep(10000);
 var host = getHostname();
 var con = scan();
 for (i = con.length - 1; i >= 0; i--) {
-	if(con[i] == "darkweb" || con[i] == "Server-1" || con[i] == "home"){}
+	if(con[i] == "darkweb" || con[i] == "Server 1"){}
 	else{
 		if(scriptRunning("mining.script", con[i]) == false){
-			tprint("WARNING---Start hacking " + con[i]);
-			brutessh(con[i]);
-			ftpcrack(con[i]);
-			relaysmtp(con[i]);
-			httpworm(con[i]);
-			nuke(con[i]);
-			scp("mining.script", con[i]);
-			exec("mining.script", con[i]);
-			tprint("INFO---Hacking sucessful " + con[i]);
+			if(getHackingLevel >= getServerRequiredHackingLevel){
+				tprint("WARNING---Start hacking " + con[i]);
+				brutessh(con[i]);
+				ftpcrack(con[i]);
+				relaysmtp(con[i]);
+				httpworm(con[i]);
+				nuke(con[i]);
+				scp("mining.script", con[i]);
+				exec("mining.script", con[i]);
+				tprint("INFO---Hacking sucessful " + con[i]);
+			}
 		}
 		else{
 			tprint("ERROR---Bereits gehackt " + con[i]);
