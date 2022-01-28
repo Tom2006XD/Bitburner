@@ -1,6 +1,3 @@
-var host = getHostname();
-var con = scan();
-sleep(5000);
 for (i = con.length - 1; i >= 0; i--) {
 	if(con[i] == "darkweb" || con[i] == "Server-1" || con[i] == "home"){}
 	else{
@@ -8,8 +5,8 @@ for (i = con.length - 1; i >= 0; i--) {
 			if(getHackingLevel() >= getServerRequiredHackingLevel(con[i])){
 				tprint("WARNING---Start hacking " + con[i]);
 				brutessh(con[i]);
-				//ftpcrack(con[i]);
-				//relaysmtp(con[i]);
+				ftpcrack(con[i]);
+				relaysmtp(con[i]);
 				//httpworm(con[i]);
 				nuke(con[i]);
 				scp("main.script", con[i]);
