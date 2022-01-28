@@ -8,10 +8,10 @@ for (i = con.length - 1; i >= 0; i--) {
 		if(scriptRunning("mining.script", con[i]) == false){
 			if(getHackingLevel() >= getServerRequiredHackingLevel(con[i])){
 				tprint("WARNING---Start hacking " + con[i]);
-				brutessh(con[i]);
-				ftpcrack(con[i]);
-				relaysmtp(con[i]);
-				httpworm(con[i]);
+				//brutessh(con[i]);
+				//ftpcrack(con[i]);
+				//relaysmtp(con[i]);
+				//httpworm(con[i]);
 				nuke(con[i]);
 				scp("mining.script", con[i]);
 				exec("mining.script", con[i]);
