@@ -1,1 +1,19 @@
-
+wget("https://raw.githubusercontent.com/Tom2006XD/Bitburner/main/mining.script", "mining.script");
+sleep(2000);
+if(getServerMaxRam(getHostname()) < 9){
+	run("mining.script", 1);
+}
+else if(getServerMaxRam(getHostname()) < 17){
+	run("mining.script", 5);
+}
+else if(getServerMaxRam(getHostname()) < 33){
+	run("mining.script", 11);
+}
+else if(getServerMaxRam(getHostname()) < 65){
+	run("mining.script", 22);
+}
+run("mining.script")
+while(true){
+	weaken(getHostname());
+	grow(getHostname());
+}
